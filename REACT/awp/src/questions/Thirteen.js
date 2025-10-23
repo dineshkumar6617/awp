@@ -1,59 +1,62 @@
 import React, { useState } from "react";
-// import "../Calc.css"; // importing external CSS
 
 function Thirteen() {
-  const [input, setInput] = useState("");
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [result, setResult] = useState(0);
 
-  // Handle button click
-  const handleClick = (value) => {
-    setInput(input + value);
-  };
+  function add() {
+    setResult(Number(num1) + Number(num2));
+  }
 
-  // Clear input
-  const handleClear = () => {
-    setInput("");
-  };
+  function subtract() {
+    setResult(Number(num1) - Number(num2));
+  }
 
-  // Evaluate expression
-  const handleEqual = () => {
-    try {
-      // eslint-disable-next-line no-eval
-      setInput(eval(input).toString());
-    } catch (error) {
-      setInput("Error");
+  function multiply() {
+    setResult(Number(num1) * Number(num2));
+  }
+
+  function divide() {
+    if (Number(num2) !== 0) {
+      setResult(Number(num1) / Number(num2));
+    } else {
+      alert("Cannot divide by zero!");
     }
-  };
+  }
 
   return (
-    <div className="calculator-container">
-      <h1>React Calculator</h1>
-      <div className="calculator">
-        <input type="text" value={input} readOnly className="display" />
+    <div>
+      <h1>Simple Calculator</h1>
 
-        <div className="buttons">
-          <button onClick={handleClear} className="clear">C</button>
-          <button onClick={() => handleClick("/")}>/</button>
-          <button onClick={() => handleClick("*")}>*</button>
-          <button onClick={() => handleClick("-")}>-</button>
+      <label>
+        Number 1:
+        <input
+          type="number"
+          placeholder="Enter Number 1"
+          value={num1}
+          onChange={(e) => setNum1(e.target.value)}
+        />
+      </label>
+      <br /><br />
 
-          <button onClick={() => handleClick("7")}>7</button>
-          <button onClick={() => handleClick("8")}>8</button>
-          <button onClick={() => handleClick("9")}>9</button>
-          <button onClick={() => handleClick("+")}>+</button>
+      <label>
+        Number 2:
+        <input
+          type="number"
+          placeholder="Enter Number 2"
+          value={num2}
+          onChange={(e) => setNum2(e.target.value)}
+        />
+      </label>
+      <br /><br />
 
-          <button onClick={() => handleClick("4")}>4</button>
-          <button onClick={() => handleClick("5")}>5</button>
-          <button onClick={() => handleClick("6")}>6</button>
-          <button onClick={handleEqual} className="equal">=</button>
+      <button onClick={add}>Add</button>
+      <button onClick={subtract}>Subtract</button>
+      <button onClick={multiply}>Multiply</button>
+      <button onClick={divide}>Divide</button>
 
-          <button onClick={() => handleClick("1")}>1</button>
-          <button onClick={() => handleClick("2")}>2</button>
-          <button onClick={() => handleClick("3")}>3</button>
-          <button onClick={() => handleClick("0")}>0</button>
-
-          <button onClick={() => handleClick(".")}>.</button>
-        </div>
-      </div>
+      <h2>Result: {result}</h2>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import Twelveth from "./Tweleveth";
 import Thirteen from "./Thirteen";
 import Seventeen from "./Seventeen";
 import Eighteen from "./Eighteen";
+import Fourteen from "./Fourteen";
 function Fifteen() {
   return (
       <div style={{ textAlign: "center" }}>
@@ -25,6 +26,7 @@ function Fifteen() {
             <li><Link to="/eleventh">Eleventh</Link></li>
             <li><Link to="/twelveth">Tweleveth</Link></li>
             <li><Link to="/thirteen">Thirteen</Link></li>
+            <li><Link to="/fourteen">Fourteen</Link></li>
             <li><Link to="/weather">Seventeen</Link></li>
             <li><Link to="/todo">Eighteen</Link></li>
           </ol>
@@ -41,6 +43,7 @@ function Fifteen() {
           <Route path="/eleventh" element={<Eleventh />} />
           <Route path="/twelveth" element={<Twelveth />} />
           <Route path="/thirteen" element={<Thirteen />} />
+          <Route path="/fourteen" element={<Fourteen />} />
           <Route path="/weather" element={<Seventeen />} />
           <Route path="/todo" element={<Eighteen/>} />
         </Routes>
