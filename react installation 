@@ -1,0 +1,31 @@
+Using Create React App
+
+Step 1: Open terminal or command prompt
+
+Go to the folder where you want your project.
+
+Example:
+
+cd Desktop
+
+Step 2: Run this command
+
+npx create-react-app myapp
+
+> Replace myapp with your project name.
+
+
+
+📝 npx comes with npm — it runs create-react-app without installing it globally.
+
+Step 3: Go into your project folder
+
+cd myapp
+
+Step 4: Start the development server
+
+npm start
+
+Your React app will open automatically in your browser at:
+
+http://localhost:3000/
