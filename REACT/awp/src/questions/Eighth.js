@@ -1,6 +1,5 @@
+
 import React from 'react';
-
-
 // 1. We define a class component to hold the date in its state.
 class Eighth extends React.Component {
   
